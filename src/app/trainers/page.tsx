@@ -52,20 +52,20 @@ const TrainersPage = () => {
               transition={{ duration: 1 }}
               className="hidden lg:block relative"
             >
-              <div className="relative rounded-2xl overflow-hidden shadow-lg border-4 border-white aspect-[4/3] bg-gradient-to-br from-primary-100 via-blue-50 to-indigo-100">
+              {/* Decorative background blob */}
+              <div className="absolute -inset-4 bg-primary/5 rounded-[3rem] -z-10" />
+
+              <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl border-[10px] border-white aspect-[4/3]">
                 <img 
-                  src="https://images.unsplash.com/photo-1544717297-fa95b3ee51f8?auto=format&fit=crop&q=80&w=1200&h=900" 
+                  src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=1200&h=900" 
                   alt="Elite Educators" 
                   className="w-full h-full object-cover"
-                  onError={(e) => {
-                    const img = e.target as HTMLImageElement;
-                    img.style.opacity = '0';
-                  }}
                 />
-                <div className="absolute inset-0 bg-primary/5" />
+                <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 via-transparent to-transparent" />
               </div>
+
               {/* Badge bubble */}
-              <div className="absolute -top-8 -right-8 bg-white border border-gray-100 p-6 rounded-2xl shadow-2xl flex items-center gap-4">
+              <div className="absolute -top-6 -right-6 bg-white border border-gray-100 p-5 rounded-2xl shadow-2xl flex items-center gap-4">
                 <div className="w-12 h-12 bg-primary-50 border border-primary-100 rounded-xl flex items-center justify-center">
                   <Users className="w-6 h-6 text-primary" />
                 </div>
@@ -74,7 +74,13 @@ const TrainersPage = () => {
                   <p className="text-xl font-black text-primary leading-none mt-1">6+</p>
                 </div>
               </div>
+
+              {/* Bottom-left decorative dot grid */}
+              <div className="absolute -bottom-4 -left-4 w-24 h-24 opacity-20"
+                style={{ backgroundImage: "radial-gradient(circle, #2563eb 1px, transparent 1px)", backgroundSize: "8px 8px" }}
+              />
             </motion.div>
+
           </div>
         </div>
       </section>
