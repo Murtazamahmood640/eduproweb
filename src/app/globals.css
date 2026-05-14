@@ -1,0 +1,180 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+
+  /* Primary Color — Royal Blue #002366 */
+  --color-primary: #002366;
+  --color-primary-50:  #f0f4fb;
+  --color-primary-100: #d9e2f3;
+  --color-primary-200: #b3c5e8;
+  --color-primary-300: #7d9ed5;
+  --color-primary-400: #4a75be;
+  --color-primary-500: #002366;
+  --color-primary-600: #001d56;
+  --color-primary-700: #001745;
+  --color-primary-800: #001033;
+  --color-primary-900: #000a22;
+
+  /* Keep edu-indigo mapped to primary for backward compat */
+  --color-edu-indigo: #002366;
+  --color-edu-indigo-50: #f0f4fb;
+  --color-edu-indigo-100: #d9e2f3;
+  --color-edu-indigo-200: #b3c5e8;
+  --color-edu-indigo-600: #001d56;
+  --color-edu-indigo-700: #001745;
+
+  /* Neutral / Slate */
+  --color-edu-slate: #1e293b;
+  --color-edu-slate-50:  #f8fafc;
+  --color-edu-slate-100: #f1f5f9;
+  --color-edu-slate-200: #e2e8f0;
+  --color-edu-slate-300: #cbd5e1;
+  --color-edu-slate-400: #94a3b8;
+  --color-edu-slate-500: #64748b;
+  --color-edu-slate-600: #475569;
+  --color-edu-slate-700: #334155;
+  --color-edu-slate-800: #1e293b;
+  --color-edu-slate-900: #0f172a;
+
+  /* Accent — only used sparingly */
+  --color-edu-accent: #002366;
+  --color-edu-gold:   #c5a059;
+
+  --animate-float: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50%       { transform: translateY(-16px) rotate(1deg); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(0, 35, 102, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(0, 35, 102, 0.6); }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float-hover {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #0f172a;
+  --animate-shimmer: shimmer 2s infinite;
+  --animate-glow-pulse: glow-pulse 3s ease-in-out infinite;
+  --animate-slide-up: slide-up 0.6s ease-out;
+  --animate-gradient-shift: gradient-shift 6s ease infinite;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  overflow-x: hidden;
+}
+
+/* ── Custom Patterns ───────────────────────────────────── */
+.bg-box-pattern {
+  background-image: 
+    linear-gradient(to right, rgba(0, 35, 102, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 35, 102, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.bg-dot-pattern {
+  background-image: radial-gradient(rgba(0, 35, 102, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* ── Nav ───────────────────────────────────────────────── */
+.glass-nav {
+  @apply sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-primary-100;
+}
+
+/* ── Buttons ───────────────────────────────────────────── */
+.btn-primary {
+  @apply px-8 py-4 bg-primary text-white rounded-xl font-bold
+         hover:bg-primary-600 transition-all active:scale-95
+         shadow-lg shadow-primary/20;
+}
+
+.btn-secondary {
+  @apply px-8 py-4 bg-white text-primary border-2 border-primary/20
+         rounded-xl font-bold hover:bg-primary-50 transition-all active:scale-95;
+}
+
+/* ── Layout helpers ────────────────────────────────────── */
+.section-container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28;
+}
+
+/* ── Typography ────────────────────────────────────────── */
+.heading-h1 {
+  @apply font-display text-5xl md:text-7xl font-black tracking-tight
+         text-primary leading-[1.1];
+}
+
+.heading-h2 {
+  @apply font-display text-3xl md:text-5xl font-black tracking-tight text-primary;
+}
+
+.heading-h3 {
+  @apply font-display text-xl md:text-2xl font-black text-primary;
+}
+
+/* ── Cards ─────────────────────────────────────────────── */
+.card-premium {
+  @apply bg-white border border-edu-slate-100 rounded-2xl shadow-sm
+         hover:shadow-xl hover:-translate-y-1.5 transition-all duration-500;
+}
+
+/* ── Text gradient (primary only) ─────────────────────── */
+.text-gradient {
+  @apply bg-clip-text text-transparent
+         bg-gradient-to-r from-primary to-primary-400;
+}
+
+/* ── Section background tint ───────────────────────────── */
+.bg-primary-tint {
+  background-color: rgba(0, 35, 102, 0.02);
+}
+
+/* ── Tag / badge pill ──────────────────────────────────── */
+.badge-primary {
+  @apply inline-flex items-center gap-2 px-4 py-1.5
+         bg-primary-50 text-primary border border-primary-100
+         rounded-full text-[10px] font-black uppercase tracking-widest;
+}
+
+/* Custom scrollbar for SlideOver */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(0, 35, 102, 0.1);
+  border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 35, 102, 0.2);
+}
