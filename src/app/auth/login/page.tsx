@@ -247,7 +247,7 @@ function LoginContent() {
               disabled={loading}
               className="w-full flex items-center justify-center gap-3 bg-gradient-to-r from-primary to-primary-600 text-white py-4 rounded-xl font-black text-[10px] uppercase tracking-[0.2em] hover:shadow-xl hover:shadow-primary/30 transition-all active:scale-[0.98] shadow-lg shadow-primary/20 group mt-4 disabled:opacity-50"
             >
-              {loading ? "Authenticating..." : `Enter ${role === "admin" ? "Admin" : role.charAt(0).toUpperCase() + role.slice(1)} Portal`}
+              {loading ? "Authenticating..." : `Enter ${role.charAt(0).toUpperCase() + role.slice(1)} Portal`}
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
           </form>
