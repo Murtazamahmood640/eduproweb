@@ -87,7 +87,14 @@ export default function AdminTeachers() {
 
   const handleAdd = () => {
     setEditingTeacher(null);
-    setFormData({ name: "", email: "", subject: "", courses: "" });
+    setFormData({ 
+      name: "", 
+      email: "", 
+      specialization: "", 
+      education: "", 
+      experience: "",
+      socialLinks: { linkedin: "", youtube: "", github: "" }
+    });
     setIsFormOpen(true);
   };
 
