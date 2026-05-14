@@ -173,7 +173,7 @@ export default function QuizPage() {
         <h2 className="font-display text-lg font-bold text-slate-900 mb-6 leading-relaxed">{q.question}</h2>
 
         <div className="space-y-3">
-          {q.options.map((opt, i) => (
+          {q.options.map((opt: string, i: number) => (
             <button
               key={i}
               onClick={() => handleSelect(i)}
