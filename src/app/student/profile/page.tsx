@@ -14,7 +14,7 @@ import { useAuth } from "@/context/AuthContext";
 import toast from "react-hot-toast";
 
 export default function StudentProfile() {
-  const { dbUser, refreshDbUser } = useAuth();
+  const { dbUser, refreshDbUser, logout } = useAuth();
   const [tab, setTab] = useState<"personal" | "security" | "notifications">("personal");
   const [isEditOpen, setIsEditOpen] = useState(false);
   const [showPreview, setShowPreview] = useState(false);
