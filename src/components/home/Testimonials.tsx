@@ -108,7 +108,7 @@ const Testimonials = () => {
               {/* Author */}
               <div className="flex items-center gap-4 pt-6 border-t border-edu-slate-100/50">
                 <motion.img
-                  src={t.image || null}
+                  src={t.image || undefined}
                   alt={t.author}
                   className="w-12 h-12 rounded-xl object-cover border-3 border-primary-100 shadow-md group-hover:border-primary-200"
                   whileHover={{ scale: 1.05 }}

@@ -126,7 +126,7 @@ export default function TeacherLayout({ children }: { children: React.ReactNode 
   // Final authorization guard
   if (!dbUser || dbUser.role !== 'teacher') return null;
 
-  const displayName = dbUser?.name || user.displayName || "Teacher";
+  const displayName = dbUser?.name || "Teacher";
   const initials = displayName.split(" ").map((n: string) => n[0]).join("").slice(0, 2).toUpperCase();
   const userId = dbUser?.userId || "—";
 

@@ -54,7 +54,7 @@ const TrainersSection = () => {
                 {/* Photo */}
                 <div className="relative h-64 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-50">
                   <motion.img
-                    src={trainer.image || null}
+                    src={trainer.image || undefined}
                     alt={trainer.name}
                     className="w-full h-full object-cover object-top transition-transform duration-700"
                     whileHover={{ scale: 1.08 }}

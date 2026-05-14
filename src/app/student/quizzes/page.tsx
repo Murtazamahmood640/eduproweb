@@ -4,6 +4,8 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { Brain, Clock, CheckCircle, XCircle, PlayCircle, Trophy, AlertCircle, Search, Filter, Sparkles, Loader2 } from "lucide-react";
 import { motion } from "framer-motion";
+import api from "@/lib/api";
+
 
 const quizzes = [
   { id: "q1", title: "Module 1 — Intro to UI/UX", course: "UI/UX Design Mastery", questions: 10, duration: "15 min", status: "Passed", score: 90, dueDate: null },

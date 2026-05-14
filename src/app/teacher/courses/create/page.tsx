@@ -386,7 +386,7 @@ export default function CreateCourse() {
                   </div>
 
                   <div className="grid grid-cols-1 gap-4 ml-14">
-                    {section.lessons.map((lesson, li) => (
+                    {section.lessons.map((lesson: any, li: number) => (
                       <div key={li} className="bg-white border border-gray-100 rounded-2xl p-6 flex flex-col md:flex-row items-center gap-6">
                          <div className="flex-1 min-w-0 w-full">
                            <input 

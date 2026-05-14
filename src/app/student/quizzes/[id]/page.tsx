@@ -201,7 +201,7 @@ export default function QuizPage() {
         </button>
 
         <div className="flex gap-1">
-          {quiz.questions.map((_, i) => (
+          {quiz.questions.map((_: any, i: number) => (
             <button key={i} onClick={() => { setCurrent(i); setSelected(answers[i]); }}
               className={`w-2 h-2 rounded-full transition-all ${i === current ? "bg-edu-indigo w-6" : answers[i] !== null ? "bg-edu-emerald" : "bg-slate-200"}`}
             />

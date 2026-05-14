@@ -354,7 +354,7 @@ export default function CourseForm({ onSuccess, onCancel }: CourseFormProps) {
                   </div>
 
                   <div className="space-y-3">
-                    {section.lessons.map((lesson, li) => (
+                    {section.lessons.map((lesson: any, li: number) => (
                       <div key={li} className="bg-white border border-gray-100 rounded-2xl p-4 space-y-4 shadow-sm">
                         <div className="flex items-center justify-between gap-3">
                           <input 
