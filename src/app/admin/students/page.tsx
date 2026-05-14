@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import api from "@/lib/api";
 import SlideOverlay from "@/components/ui/SlideOverlay";
+import toast from "react-hot-toast";
 
 export default function AdminStudents() {
   const [students, setStudents] = useState<any[]>([]);
