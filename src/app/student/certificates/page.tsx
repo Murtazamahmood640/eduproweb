@@ -10,6 +10,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import api from "@/lib/api";
 import { useAuth } from "@/context/AuthContext";
 import toast from "react-hot-toast";
+import Link from "next/link";
 
 export default function CertificatesPage() {
   const { dbUser } = useAuth();
