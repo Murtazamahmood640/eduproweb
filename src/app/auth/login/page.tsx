@@ -54,7 +54,7 @@ function LoginContent() {
         // 2. EMAIL VERIFICATION CHECK (Optional: Skip for Admins if needed)
         if (!dbUser.isEmailVerified && dbUser.role !== 'admin') {
           console.log("📧 Email not verified. Redirecting to OTP...");
-          router.replace(`/auth/verify-otp?email=${encodeURIComponent(user.email || "")}&role=${dbUser.role}`);
+          router.replace(`/auth/verify-otp?email=${encodeURIComponent(user?.email || "")}&role=${dbUser.role}`);
           return;
         }
 
@@ -67,8 +67,8 @@ function LoginContent() {
           try {
             console.log("🛠️ Attempting auto-provisioning for missing profile...");
             await api.post('/users/profile', { 
-              name: user.displayName || "EduPro Student", 
-              email: user.email, 
+              name: user?.displayName || "EduPro Student", 
+              email: user?.email, 
               role: "student" 
             });
             refreshDbUser(); // Trigger refresh
